@@ -25,8 +25,13 @@ int main(int argc, char* argv[]){
     json tasks = loadTasks(path);
 
     if (argc < 2){
-        std::cout << "Usage: " << argv[0] << " [command] [options]\n";
-        std::cout << "Commands:\n  --greet [name]   Greets a user\n  --version        Shows version\n";
+        std::cout << "Usage: " << argv[0] << " <command> [options]\n";
+        std::cout << "Commands:\n"
+                  << "  add <description>       Add a new task\n"
+                  << "  update <id> <text>      Update a task's description\n"
+                  << "  remove <id>             Remove a task by ID\n"
+                  << "  list                    List all tasks\n"
+                  << "  --version               Show version\n";
         return 1;
     }
 
